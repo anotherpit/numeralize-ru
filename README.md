@@ -10,20 +10,23 @@ npm install --save numeralize-ru
 
 # API
 
-`numeralize(number, [gender, [kase, [animate]]])` — возвращает числительное, соответствующее числу
+### `numeralize(number, [gender, [kase, [animate]]])`
+
+Возвращает числительное, соответствующее числу
+
 + `number` — число, для которого надо записать числительное;
-+ `gender` - пол:
-    + `numeralize.GENDER_MASCULINE` - мужской (по умолчанию);
-    + `numeralize.GENDER_FEMININE` - женский;
-    + `numeralize.GENDER_NEUTER` - средний;
-+ `kase` - падеж (`case` является ключевым словом, поэтому не может быть использован в качестве имени переменной):
-    + `numeralize.CASE_NOMINATIVE` - именительный (по умолчанию);
-    + `numeralize.CASE_GENITIVE` - родительный;
-    + `numeralize.CASE_DATIVE` - дательный;
-    + `numeralize.CASE_ACCUSATIVE` - винительный;
-    + `numeralize.CASE_INSTRUMENTAL` - творительный;
-    + `numeralize.CASE_PREPOSITIONAL` - предложный;
-+ `animate` - являются ли перечисляемые предметы одушевлёнными (влияет на форму винительного падежа некоторых числительных)
++ `gender` — пол:
+    + `numeralize.GENDER_MASCULINE` — мужской (по умолчанию);
+    + `numeralize.GENDER_FEMININE` — женский;
+    + `numeralize.GENDER_NEUTER` — средний;
++ `kase` — падеж (`case` является ключевым словом, поэтому не может быть использован в качестве имени переменной):
+    + `numeralize.CASE_NOMINATIVE` — именительный (по умолчанию);
+    + `numeralize.CASE_GENITIVE` — родительный;
+    + `numeralize.CASE_DATIVE` — дательный;
+    + `numeralize.CASE_ACCUSATIVE` — винительный;
+    + `numeralize.CASE_INSTRUMENTAL` — творительный;
+    + `numeralize.CASE_PREPOSITIONAL` — предложный;
++ `animate` — являются ли перечисляемые предметы одушевлёнными (влияет на форму винительного падежа некоторых числительных)
 
 ```javascript
 const numeralize = require('numeralize');
@@ -59,8 +62,11 @@ numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_PREPOSITIONA
 // мужской род, творительный падеж, 'пяти миллиардах ста двадцати двух миллионах девятистах восьмидесяти одной тысяче ста двадцати одном'
 ```
 
-`numeralize.pluralize(number, one, two, five)` — выбирает нужную форму существительного в зависимости от количества
-+ `number` – количество
+###  `numeralize.pluralize(count, one, two, five)`
+
+Выбирает нужную форму существительного в зависимости от количества.
+
++ `count` — количество
 + `one` — форма существительного для одного предмета, например, _рубль_;
 + `two` — форма существительного для двух предметов, например, _рубля_;
 + `five` — форма существительного для пяти предметов, например, _рублей_;
