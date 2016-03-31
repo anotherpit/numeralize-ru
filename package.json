@@ -1,0 +1,30 @@
+{
+  "name": "numeralize-ru",
+  "version": "1.0.0",
+  "description": "Russian numerals",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "dev": "./node_modules/.bin/mocha --watch"
+  },
+  "keywords": [
+    "russian",
+    "language",
+    "number",
+    "numeral",
+    "cardinal",
+    "ordinal",
+    "collective",
+    "numeralize",
+    "ru"
+  ],
+  "author": "anotherpit <anotherpit@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anotherpit/numeralize-ru.git"
+  }
+}
