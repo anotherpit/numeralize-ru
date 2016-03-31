@@ -66,7 +66,7 @@ numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_PREPOSITIONA
 + `five` — форма существительного для пяти предметов, например, _рублей_;
 
 ```javascript
-const pluralize = require('numeralize).pluralize;
+const pluralize = require('numeralize').pluralize;
 
 pluralize(0, 'рубль', 'рубля', 'рублей');
 // 'рублей'
