@@ -26,7 +26,7 @@ npm install --save numeralize-ru
 + `animate` - являются ли перечисляемые предметы одушевлёнными (влияет на форму винительного падежа некоторых числительных)
 
 ```javascript
-const numeralize = require('numeralize);
+const numeralize = require('numeralize');
 
 numeralize(5122981121);
 // мужской род, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать один'
