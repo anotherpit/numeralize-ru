@@ -106,4 +106,3 @@ pluralize(21, 'рубль', 'рубля', 'рублей');
 # См.также
 
 + Подробно о склонении числительных в русском языке с примерами: http://numeralonline.ru/
-+ TypeScript: https://github.com/types/npm-numeralize-ru

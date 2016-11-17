@@ -1,10 +1,12 @@
 {
   "name": "numeralize-ru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Russian numerals",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha",
+    "test": "npm run test:js; npm run test:ts",
+    "test:js": "./node_modules/.bin/mocha",
+    "test:ts": "./node_modules/.bin/tsc ./test/*.d.spec.ts --noEmit --noImplicitAny --strictNullChecks --target ES6",
     "dev": "./node_modules/.bin/mocha --watch"
   },
   "keywords": [
@@ -21,7 +23,8 @@
   "author": "anotherpit <anotherpit@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "typescript": "^2.0.10"
   },
   "repository": {
     "type": "git",
