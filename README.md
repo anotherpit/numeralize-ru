@@ -29,7 +29,7 @@ npm install --save numeralize-ru
 + `animate` — являются ли перечисляемые предметы одушевлёнными (влияет на форму винительного падежа некоторых числительных)
 
 ```javascript
-const numeralize = require('numeralize');
+const numeralize = require('numeralize-ru');
 
 numeralize(5122981121);
 // мужской род, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать один'
@@ -72,7 +72,7 @@ numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_PREPOSITIONA
 + `five` — форма существительного для пяти предметов, например, _рублей_;
 
 ```javascript
-const pluralize = require('numeralize').pluralize;
+const pluralize = require('numeralize-ru').pluralize;
 
 pluralize(0, 'рубль', 'рубля', 'рублей');
 // 'рублей'
