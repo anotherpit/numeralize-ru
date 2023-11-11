@@ -1,4 +1,4 @@
-import {Case, Gender, numeralize} from "./index";
+import {numeralize, Gender, Case} from "./index";
 import * as assert from "assert";
 
 describe(numeralize.name, () => {

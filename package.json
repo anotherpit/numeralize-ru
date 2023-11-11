@@ -1,17 +1,18 @@
 {
   "name": "numeralize-ru",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "description": "Russian numerals",
   "type": "module",
   "exports": {
     ".": {
-      "types": "./lib/types/index.d.ts",
-      "require": "./lib/cjs/index.js",
-      "import": "./lib/esm/index.js",
-      "default": "./lib/esm/index.js"
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "default": "./lib/index.js",
+      "browser": "./lib/index.browser.js"
     }
   },
-  "main": "lib/cjs/index.js",
+  "main": "lib/index.js",
   "files": [
     "lib/",
     "LICENSE.md",
@@ -22,7 +23,7 @@
     "dev": "ts-mocha src/**.spec.ts -w --watch-files 'src/**.ts'",
     "test": "ts-mocha src/**.spec.ts",
     "lint": "eslint src/*",
-    "build": "rm -rf ./lib && tsc --build ./tsconfig.amd.json ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json ./tsconfig.umd.json",
+    "build": "rm -rf ./lib && tsc --build && esbuild ./lib/index.js --outfile=lib/index.browser.js --format=iife --global-name=numeralize",
     "prepublish": "npm run lint && npm run test && npm run build"
   },
   "keywords": [
@@ -42,6 +43,7 @@
     "@types/mocha": "^10.0.2",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
+    "esbuild": "^0.19.5",
     "eslint": "^8.51.0",
     "mocha": "^10.2.0",
     "ts-mocha": "^10.0.0",
