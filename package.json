@@ -1,13 +1,30 @@
 {
   "name": "numeralize-ru",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Russian numerals",
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "require": "./lib/index.js",
+      "import": "./lib/index.js",
+      "default": "./lib/index.js",
+      "browser": "./lib/index.browser.js"
+    }
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "LICENSE.md",
+    "README.md",
+    "package.json"
+  ],
   "scripts": {
-    "test": "npm run test:js; npm run test:ts",
-    "test:js": "./node_modules/.bin/mocha",
-    "test:ts": "./node_modules/.bin/tsc ./test/*.d.spec.ts --noEmit --noImplicitAny --strictNullChecks --target ES6",
-    "dev": "./node_modules/.bin/mocha --watch"
+    "dev": "ts-mocha src/**.spec.ts -w --watch-files 'src/**.ts'",
+    "test": "ts-mocha src/**.spec.ts",
+    "lint": "eslint src/*",
+    "build": "rm -rf ./lib && tsc --build && esbuild ./lib/index.js --outfile=lib/index.browser.js --format=iife --global-name=numeralize",
+    "prepublish": "npm run lint && npm run test && npm run build"
   },
   "keywords": [
     "russian",
@@ -23,11 +40,18 @@
   "author": "anotherpit <anotherpit@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^2.4.5",
-    "typescript": "^2.0.10"
+    "@types/mocha": "^10.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.51.0",
+    "mocha": "^10.2.0",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anotherpit/numeralize-ru.git"
+    "url": "git+https://github.com/anotherpit/numeralize-ru.git"
   }
 }
