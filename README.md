@@ -16,53 +16,53 @@ npm install --save numeralize-ru
 
 + `number` — число, для которого надо записать числительное;
 + `gender` — пол:
-    + `numeralize.GENDER_MASCULINE` — мужской (по умолчанию);
-    + `numeralize.GENDER_FEMININE` — женский;
-    + `numeralize.GENDER_NEUTER` — средний;
+    + `Gender.Masculine` — мужской (по умолчанию);
+    + `Gender.Feminine` — женский;
+    + `Gender.Neuter` — средний;
 + `kase` — падеж (`case` является ключевым словом, поэтому не может быть использован в качестве имени переменной):
-    + `numeralize.CASE_NOMINATIVE` — именительный (по умолчанию);
-    + `numeralize.CASE_GENITIVE` — родительный;
-    + `numeralize.CASE_DATIVE` — дательный;
-    + `numeralize.CASE_ACCUSATIVE` — винительный;
-    + `numeralize.CASE_INSTRUMENTAL` — творительный;
-    + `numeralize.CASE_PREPOSITIONAL` — предложный;
+    + `Case.Nominative` — именительный (по умолчанию);
+    + `Case.Genitive` — родительный;
+    + `Case.Dative` — дательный;
+    + `Case.Accusative` — винительный;
+    + `Case.Instrumental` — творительный;
+    + `Case.Prepositional` — предложный;
 + `animate` — являются ли перечисляемые предметы одушевлёнными (влияет на форму винительного падежа некоторых числительных)
 
-```javascript
-const numeralize = require('numeralize-ru');
+```typescript
+import {Case, Gender, numeralize, pluralize} from 'numeralize-ru';
 
 numeralize(5122981121);
 // мужской род, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать один'
 
-numeralize(5122981121, numeralize.GENDER_FEMININE);
+numeralize(5122981121, Gender.Feminine);
 // женский род, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать одна'
 
-numeralize(5122981121, numeralize.GENDER_NEUTER);
+numeralize(5122981121, Gender.Neuter);
 // средний род, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать одно'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_NOMINATIVE);
+numeralize(5122981121, Gender.Masculine, Case.Nominative);
 // мужской род, именительный падеж, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одна тысяча сто двадцать один'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_GENITIVE);
+numeralize(5122981121, Gender.Masculine, Case.Genitive);
 // мужской род, родительный падеж, 'пяти миллиардов ста двадцати двух миллионов девятисот восьмидесяти одной тысячи ста двадцати одного'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_DATIVE);
+numeralize(5122981121, Gender.Masculine, Case.Dative);
 // мужской род, дательный падеж, 'пяти миллиардам ста двадцати двум миллионам девятистам восьмидесяти одной тысяче ста двадцати одному'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_ACCUSATIVE);
+numeralize(5122981121, Gender.Masculine, Case.Accusative);
 // мужской род, винительный падеж, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одну тысячу сто двадцать один'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_ACCUSATIVE, true);
+numeralize(5122981121, Gender.Masculine, Case.Accusative, true);
 // мужской род, винительный падеж, одушевлённые предметы, 'пять миллиардов сто двадцать два миллиона девятьсот восемьдесят одну тысячу сто двадцать одного'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_INSTRUMENTAL);
+numeralize(5122981121, Gender.Masculine, Case.Instrumental);
 // мужской род, творительный падеж, 'пятью миллиардами ста двадцатью двумя миллионами девятьюстами восемьюдесятью одной тысячей ста двадцатью одним'
 
-numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_PREPOSITIONAL);
+numeralize(5122981121, Gender.Masculine, Case.Prepositional);
 // мужской род, творительный падеж, 'пяти миллиардах ста двадцати двух миллионах девятистах восьмидесяти одной тысяче ста двадцати одном'
 ```
 
-###  `numeralize.pluralize(count, one, two, five)`
+###  `pluralize(count, one, two, five)`
 
 Выбирает нужную форму существительного в зависимости от количества.
 
@@ -71,8 +71,8 @@ numeralize(5122981121, numeralize.GENDER_MASCULINE, numeralize.CASE_PREPOSITIONA
 + `two` — форма существительного для двух предметов, например, _рубля_;
 + `five` — форма существительного для пяти предметов, например, _рублей_;
 
-```javascript
-const pluralize = require('numeralize-ru').pluralize;
+```typescript
+import {pluralize} from 'numeralize-ru';
 
 pluralize(0, 'рубль', 'рубля', 'рублей');
 // 'рублей'
@@ -95,7 +95,6 @@ pluralize(21, 'рубль', 'рубля', 'рублей');
 pluralize(22, 'рубль', 'рубля', 'рублей');
 // 'рубля'
 ```
-
 
 # Roadmap
 
