@@ -14,7 +14,7 @@ import {numeralize, Case, Gender} from "numeralize-ru";
 console.log(numeralize(5122981121, Gender.Masculine, Case.Nominative));
 ```
 
-## Использование с [дореволюционных](https://caniuse.com/?search=ESM) браузерах
+## Использование в [дореволюционных](https://caniuse.com/?search=ESM) браузерах
 
 ```html
 <script src="https://unpkg.com/numeralize-ru/lib/index.browser.js"></script>
@@ -140,9 +140,9 @@ declare function pluralize(count: number, one: string, two: string, five: string
 
 ## Roadmap
 
-+ [ ] Порядковые числительные (ordinal numerals): _первый_, _вторым_, _третьими_ и т.д.
-+ [ ] Собирательные числительные (collective numerals): _трое_, _четверых_, _пятерыми_ и т.д.
-+ [ ] Особые формы единственного и множественного числа: _одни сутки_, _два дня_, _пять суток_ и т.д.
+* Порядковые числительные (ordinal numerals): _первый_, _вторым_, _третьими_ и т.д.
+* Собирательные числительные (collective numerals): _трое_, _четверых_, _пятерыми_ и т.д.
+* Особые формы единственного и множественного числа: _одни сутки_, _два дня_, _пять суток_ и т.д.
 
 ## См.также
 
